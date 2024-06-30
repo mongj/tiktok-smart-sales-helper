@@ -39,7 +39,7 @@ export async function loadS3IntoPinecone(fileKey: string) {
 
   const vectors = await Promise.all(documents.flat().map(embedDocument));
   const client = await getPineconeClient();
-  const pineconeIndex = client.Index("rizz-up");
+  const pineconeIndex = client.Index("tiktok-smart-sales-helper");
   const namespace = pineconeIndex.namespace(convertToASCII(fileKey)); // if files are not all in asci characters, will break
 
   console.log("inserting vectors into pinecone");
